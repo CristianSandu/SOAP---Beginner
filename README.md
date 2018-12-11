@@ -51,10 +51,13 @@ public class Output {
       this.sortedVector = numbers;
    }
 }
+
+// Output contains only getters and setters. 
+// This type of classes are called POJO
+
 ```
-*1* Output contains only getters and setters. 
-*2* This type of classes are called POJO
-*3* according to the Java Bean specification, in addition to getters & setters there must be at least one constructor without arguments.
+
+* Note: according to the Java Bean specification, in addition to getters & setters there must be at least one constructor without arguments.
 
 ## Instructions
 
