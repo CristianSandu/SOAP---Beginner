@@ -21,7 +21,7 @@ Note:
 File->New->Dynamic Web Project
 It is reccomended to create a package named: it.things.ws - Your classes will stay under this package. Import the needed standard libraries.
 
-public class MyService {
+#####public class MyService {
  
    public String echo(String message) {
       return "Echo " + message;
@@ -31,8 +31,8 @@ public class MyService {
       return new Output(input.getVector());
    }
 }
-// Input contains only getters and setters
-public class Input {
+
+##### public class Input {
    private int[] vector;
    public Input() {
    }
@@ -40,9 +40,9 @@ public class Input {
       this.vector = numbers;
    } 
 }
-// Output contains only getters and setters. 
-// This type of classes are called POJO
-public class Output {
+// Input contains only getters and setters
+
+##### public class Output {
    private int[] sortedVector;
    public Output() {
    }
@@ -50,8 +50,9 @@ public class Output {
       this.sortedVector = numbers;
    }
 }
-
-Note: according to the Java Bean specification, in addition to getters & setters there must be at least one constructor without arguments.
+*1* Output contains only getters and setters. 
+*2* This type of classes are called POJO
+*3* according to the Java Bean specification, in addition to getters & setters there must be at least one constructor without arguments.
 
 ## Instructions
 
