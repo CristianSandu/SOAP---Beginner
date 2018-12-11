@@ -79,6 +79,10 @@ For now leave them as they are. Click Next.
 - For example, by selecting the echo method and entering a string, the result returned by the server will be displayed immediately.
 - Looking at the web.xml you can see Eclipse has added two new servlets: AxisServlet and AdminServlet with different types of mapping: they will receive the calls and translate them for our service in Java. Axis is nothing more than an open source implementation of the SOAP protocol for Java: every time you deal with Axis, you can discover all the services deplored on the server by simply recalling a URI like this:
 
-http://localhost:8080/WebServiceProducerTest/services
-which will show the URI of the WSDL, like the one just created:
-http://localhost:8080/WebServiceProducerTest/services/MyService?wsdl
+http://localhost:8080/WebServiceProducerTest/services which will show the URI of the WSDL, like the one just created.
+http://localhost:8080/WebServiceProducerTest/services/MyService?wsdl which will show the WSDL of the service.
+
+## Testing your Service
+
+*1* Download SOAPUI 
+
