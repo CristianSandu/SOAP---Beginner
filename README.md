@@ -54,22 +54,24 @@ public class Output {
 Note: according to the Java Bean specification, in addition to getters & setters there must be at least one constructor without arguments.
 
 ## Instructions
-Right click on the class of our service MyService.java, then New-> Other ... and under Web Service folder select "Web Service"
-A configuration wizard will start: in the first screen: the service creation strategy ("Bottom-up").
-Put the horizontal lever on the left to the "Test Service" level.
-In this way the service will be generated, will be automatically deplored on Tomcat and will open a test page of the service that we will see at the end. Before continuing, also select "Monitor the Web Service" at the bottom to monitor SOAP messages from within Eclipse. Click Next.
-Select the name of the WSDL file that will be created and the methods of the class that you want to expose as a service.
+
+- Right click on the class of our service MyService.java, then New-> Other ... and under Web Service folder select "Web Service"
+- A configuration wizard will start: in the first screen: the service creation strategy ("Bottom-up").
+- Put the horizontal lever on the left to the "Test Service" level.
+- In this way the service will be generated, will be automatically deplored on Tomcat and will open a test page of the service that we will see at the end. Before continuing, also select "Monitor the Web Service" at the bottom to monitor SOAP messages from within Eclipse. Click Next.
+- Select the name of the WSDL file that will be created and the methods of the class that you want to expose as a service.
 For now leave them as they are. Click Next.
-The last two steps are very simple: you will be asked to start the Tomcat if it is not already (click Start Server and Next)
-Then click Next to launch the test application provided by Eclipse and Finish.
-At the end the browser will open showing a page containing the services.
+- The last two steps are very simple: you will be asked to start the Tomcat if it is not already (click Start Server and Next)
+- Then click Next to launch the test application provided by Eclipse and Finish.
+- At the end the browser will open showing a page containing the services.
 
 ## WebContent folder
-The new wsdl folder with the descriptor of our service appeared. 
-Inside WEB-INF instead we find another new folder and a service configuration file.
-We will check immediately from the browser page that has opened previously if everything works. 
-For example, by selecting the echo method and entering a string, the result returned by the server will be displayed immediately.
-Looking at the web.xml you can see Eclipse has added two new servlets: AxisServlet and AdminServlet with different types of mapping: they will receive the calls and translate them for our service in Java. Axis is nothing more than an open source implementation of the SOAP protocol for Java: every time you deal with Axis, you can discover all the services deplored on the server by simply recalling a URI like this:
+
+- The new wsdl folder with the descriptor of our service appeared. 
+- Inside WEB-INF instead we find another new folder and a service configuration file.
+- We will check immediately from the browser page that has opened previously if everything works. 
+- For example, by selecting the echo method and entering a string, the result returned by the server will be displayed immediately.
+- Looking at the web.xml you can see Eclipse has added two new servlets: AxisServlet and AdminServlet with different types of mapping: they will receive the calls and translate them for our service in Java. Axis is nothing more than an open source implementation of the SOAP protocol for Java: every time you deal with Axis, you can discover all the services deplored on the server by simply recalling a URI like this:
 
 http://localhost:8080/WebServiceProducerTest/services
 which will show the URI of the WSDL, like the one just created:
