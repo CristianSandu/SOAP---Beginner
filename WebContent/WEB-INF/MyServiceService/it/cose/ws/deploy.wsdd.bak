@@ -1,0 +1,59 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MyServiceService WSDL service -->
+
+  <service name="MyService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.cose.it"/>
+      <parameter name="wsdlServiceElement" value="MyServiceService"/>
+      <parameter name="schemaQualified" value="http://ws.cose.it"/>
+      <parameter name="wsdlServicePort" value="MyService"/>
+      <parameter name="className" value="it.cose.ws.MyServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="MyService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="sort" qname="operNS:sort" xmlns:operNS="http://ws.cose.it" returnQName="retNS:sortReturn" xmlns:retNS="http://ws.cose.it" returnType="rtns:Output" xmlns:rtns="http://ws.cose.it" soapAction="" >
+        <parameter qname="pns:input" xmlns:pns="http://ws.cose.it" type="tns:Input" xmlns:tns="http://ws.cose.it"/>
+      </operation>
+      <operation name="echo" qname="operNS:echo" xmlns:operNS="http://ws.cose.it" returnQName="retNS:echoReturn" xmlns:retNS="http://ws.cose.it" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:message" xmlns:pns="http://ws.cose.it" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="somma" qname="operNS:somma" xmlns:operNS="http://ws.cose.it" returnQName="retNS:sommaReturn" xmlns:retNS="http://ws.cose.it" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:x" xmlns:pns="http://ws.cose.it" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:y" xmlns:pns="http://ws.cose.it" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="echo sort somma"/>
+
+      <arrayMapping
+        xmlns:ns="http://ws.cose.it"
+        qname="ns:ArrayOf_xsd_int"
+        type="java:int[]"
+        innerType="cmp-ns:int" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://ws.cose.it"
+        qname="ns:Output"
+        type="java:it.cose.ws.Output"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://ws.cose.it"
+        qname="ns:Input"
+        type="java:it.cose.ws.Input"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

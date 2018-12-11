@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.cose.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.cose.it" xmlns:intf="http://ws.cose.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.cose.it" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sort">
+    <complexType>
+     <sequence>
+      <element name="input" type="impl:Input"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_int">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="Input">
+    <sequence>
+     <element name="input" nillable="true" type="impl:ArrayOf_xsd_int"/>
+     <element name="vector" nillable="true" type="impl:ArrayOf_xsd_int"/>
+    </sequence>
+   </complexType>
+   <element name="sortResponse">
+    <complexType>
+     <sequence>
+      <element name="sortReturn" type="impl:Output"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Output">
+    <sequence/>
+   </complexType>
+   <element name="echo">
+    <complexType>
+     <sequence>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="echoResponse">
+    <complexType>
+     <sequence>
+      <element name="echoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="somma">
+    <complexType>
+     <sequence>
+      <element name="x" type="xsd:int"/>
+      <element name="y" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sommaResponse">
+    <complexType>
+     <sequence>
+      <element name="sommaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sortRequest">
+
+      <wsdl:part element="impl:sort" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="echoResponse">
+
+      <wsdl:part element="impl:echoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sortResponse">
+
+      <wsdl:part element="impl:sortResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sommaResponse">
+
+      <wsdl:part element="impl:sommaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="echoRequest">
+
+      <wsdl:part element="impl:echo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sommaRequest">
+
+      <wsdl:part element="impl:somma" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MyService">
+
+      <wsdl:operation name="sort">
+
+         <wsdl:input message="impl:sortRequest" name="sortRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sortResponse" name="sortResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="echo">
+
+         <wsdl:input message="impl:echoRequest" name="echoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:echoResponse" name="echoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="somma">
+
+         <wsdl:input message="impl:sommaRequest" name="sommaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sommaResponse" name="sommaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MyServiceSoapBinding" type="impl:MyService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sort">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sortRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sortResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="echo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="echoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="echoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="somma">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sommaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sommaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MyServiceService">
+
+      <wsdl:port binding="impl:MyServiceSoapBinding" name="MyService">
+
+         <wsdlsoap:address location="http://localhost:8080/Producer/services/MyService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
