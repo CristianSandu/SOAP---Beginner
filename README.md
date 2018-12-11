@@ -6,8 +6,8 @@ This tutorial answers a simple question. I have a class written with Eclipse and
 ## Prerequisites
 How much time do we spend writing a service?
 With Eclipse, writing a SOAP service for Tomcat takes 5 minutes, without adding a jar to our project (in fact Eclipse will take care of it). In this tutorial we used:
-- Eclipse Java EE IDE for Web Developers;
-- Tomcat v8.5;
+- [Eclipse Java EE IDE for Web Developers][https://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-ee-developers];
+- [Tomcat v8.5][https://tomcat.apache.org/download-80.cgi];
 
 Generally speaking, both the SOAP and REST services expose an interface, a kind of contract that describes the functionality of the server (called the service's producer) and to which the client (service consumer) relies to "consume" the service. This interface, known in SOAP as the Web Service Definition Language (WSDL) and Web Application Description Language (WADL) in REST, is in XML and describes the methods to access the services and types of data exchanged. 
 Being in XML it is clearly cross-platform: just analyze the WSDL / WADL in order to write a producer or a service consumer.
@@ -80,9 +80,16 @@ For now leave them as they are. Click Next.
 - Looking at the web.xml you can see Eclipse has added two new servlets: AxisServlet and AdminServlet with different types of mapping: they will receive the calls and translate them for our service in Java. Axis is nothing more than an open source implementation of the SOAP protocol for Java: every time you deal with Axis, you can discover all the services deplored on the server by simply recalling a URI like this:
 
 http://localhost:8080/WebServiceProducerTest/services which will show the URI of the WSDL, like the one just created.
-http://localhost:8080/WebServiceProducerTest/services/MyService?wsdl which will show the WSDL of the service.
+http://localhost:12652/Producer/services/MyService which will show the WSDL of the service.
 
 ## Testing your Service
 
-*1* Download SOAPUI 
+*1.* [Download SOAPUI][https://www.soapui.org/]
+*2.* Open SoapUI -> Create Empty Project 
+*3.* Right click on project -> Add new WSDL
+*4.* Paste WSDL link -> http://localhost:12652/Producer/services/MyService?wsdl
+*5.* Click Next. From the Navigator select MyServiceSoapBinding/Echo/Request1 double-click
+*6.*  Add message then click Play (Green Button).
+*7.* You will see the response.
+
 
