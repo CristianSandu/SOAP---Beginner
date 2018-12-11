@@ -6,8 +6,8 @@ This tutorial answers a simple question. I have a class written with Eclipse and
 ## Prerequisites
 How much time do we spend writing a service?
 With Eclipse, writing a SOAP service for Tomcat takes 5 minutes, without adding a jar to our project (in fact Eclipse will take care of it). In this tutorial we used:
-- Eclipse Java EE IDE for Web Developers[https://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-ee-developers];
-- Tomcat v8.5[https://tomcat.apache.org/download-80.cgi];
+- (Eclipse Java EE IDE for Web Developers)[https://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-ee-developers];
+- (Tomcat v8.5)[https://tomcat.apache.org/download-80.cgi];
 
 Generally speaking, both the SOAP and REST services expose an interface, a kind of contract that describes the functionality of the server (called the service's producer) and to which the client (service consumer) relies to "consume" the service. This interface, known in SOAP as the Web Service Definition Language (WSDL) and Web Application Description Language (WADL) in REST, is in XML and describes the methods to access the services and types of data exchanged. 
 Being in XML it is clearly cross-platform: just analyze the WSDL / WADL in order to write a producer or a service consumer.
@@ -91,5 +91,35 @@ http://localhost:12652/Producer/services/MyService which will show the WSDL of t
 *5.* Click Next. From the Navigator select MyServiceSoapBinding/Echo/Request1 double-click
 *6.*  Add message then click Play (Green Button).
 *7.* You will see the response.
+
+## Author ##
+
+* `Sandu Alin Cristinel`, University of Verona (Italy) [alincristinel.sandu@gmail.com](mailto:alincristinel.sandu@gmail.com)
+
+## License ##
+
+> GNU GENERAL PUBLIC LICENSE
+>
+> Copyright (c) 2018 Alin Cristinel Sandu
+> 
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+> 
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+> 
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+ 
+
 
 
