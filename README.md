@@ -84,10 +84,10 @@ http://localhost:12652/Producer/services/MyService which will show the WSDL of t
 
 ## Testing your Service
 
-*1.* Download SOAPUI[https://www.soapui.org/]
-*2.* Open SoapUI -> Create Empty Project 
-*3.* Right click on project -> Add new WSDL
-*4.* Paste WSDL link -> http://localhost:12652/Producer/services/MyService?wsdl
-*5.* Click Next. From the Navigator select MyServiceSoapBinding/Echo/Request1 double-click
-*6.*  Add message then click Play (Green Button).
-*7.* You will see the response.
+1. Download SOAPUI[https://www.soapui.org/]
+2. Open SoapUI -> Create Empty Project 
+3. Right click on project -> Add new WSDL
+4. Paste WSDL link -> http://localhost:12652/Producer/services/MyService?wsdl
+5. Click Next. From the Navigator select MyServiceSoapBinding/Echo/Request1 double-click
+6.  Add message then click Play (Green Button).
+7. You will see the response.
